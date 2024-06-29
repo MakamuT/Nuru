@@ -1,18 +1,36 @@
 * {
   background-color: #795c34;
-  color: #dbbf7b;
+  color: #faeec8;
+  font-size: 18px;
 }
+/**Login form**/
 nav img {
   width: 350px;
   height: 340px;
   margin-top: -80px;
   margin-left: -80px;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: -80px;
-  
+}
+.btn {
+  background-color: #b59410;
+  border: 1px solid #dbbf7b;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #795c34;
+}
+input {
+  background-color: transparent;
+  border-bottom: 1px solid #b59410;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
