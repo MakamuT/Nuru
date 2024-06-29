@@ -15,6 +15,10 @@ nav img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.form {
+  width: 30rem;
+  height: 10rem;
   margin-top: -80px;
   background: #ffffff0d;
   box-shadow: 0 8px 32px 0 #1f26875e;
@@ -23,7 +27,21 @@ nav img {
   border-radius: 10px;
   border: 1px solid #ffffff2e;
 }
+label{
+  margin-right: -40rem;
+}
+input {
+  text-align: center;
+  margin-right: -40rem;
+  border-bottom: 1px solid #b59410;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
 .btn {
+  text-align: center;
+  margin-right: 4rem;
   background-color: #b59410;
   border: 1px solid #dbbf7b;
   font-size: 18px;
