@@ -11,7 +11,19 @@
         <a href="feed_home.html">
           <img src="img/Nuru.png" alt="" />
         </a>
-      </div>
     </nav>
+    <section id="profile">
+      <div class="container">
+        <div class="profile-main"></div>
+        <div class="profile-sidebar"></div>
+      </div>
+    </section>
+    <script>
+      let profileMenu = document.getElementById("profileMenu");
+
+      function toggleMenu(){
+        profileMenu.classList.toggle("open-menu");
+      }
+    </script>
   </body>
 </html>
