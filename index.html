@@ -6,26 +6,74 @@
     <title>Nuru Login</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <nav>
-        <a href="feed_home.html">
-          <img src="img/Nuru.png" alt="" />
-        </a>
-      </div>
-    </nav>
-  <section id="Login">
-    <div class="box">
-      <h1>Nuru</h1>
-      <div class="form">
-        <form action="">
-          <label for="username">Username</label><br>
-          <input type="text" placeholder="Enter your username" required><br><br>
-          <label for="password">Password</label><br>
-          <input type="password" placeholder="Enter your password" required><br><br>
-          <a href="profile.html"><button class="btn" type="submit">Log In</button></a>
-        </form>
-      </div>
+  <body> 
+    <header>
+      <a href="" class="logo">
+        <img src="img/Nuru.png" alt="">
+      </a>
+      <ul>
+        <li><a href="" class="active">Home</a></li>
+        <li><a href="">My network</a></li>
+        <li><a href="">Events</a></li>
+        <li><a href="">Notifications</a></li>
+        <li><a href="">Messages</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </header>
+   <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <span>or use your email to register</span>
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+                <input type="password" placeholder="password">
+                <a href="profile.html" class="btn"><button>sign up</button></a>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="email" required>
+                <input type="password" placeholder="password" required>
+                <a href="profile.html" class="btn"><button>sign in</button></a>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>welcome back</h1>
+                    <p>To stay connected......</p>
+                    <button class="ghost" id="signIn" >Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello friend</h1>
+                    <p>Find your light</p>
+                    <button class="ghost" id="signUp" >Sign up</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+    <script>
+    const byId = (id) => {
+    return document.getElementById(id);
+};
+const $signUpButton = byId('signUp');
+const $signInButton = byId('signIn');
+const $container = byId('container');
+
+$signUpButton.addEventListener(
+    'click',
+    () => {
+        $container.classList.add('right-panel-active')
+    },
+);
+$signInButton.addEventListener(
+    'click',
+    () => {
+        $container.classList.remove('right-panel-active')
+    },
+);
+</script>
   </body>
 </html>
