@@ -108,8 +108,8 @@ a{
     margin: 8px 0;
 }
 button{
-    background: #795c34;
-    color: #faeec8;
+    background: yellow;
+    color: #070504;
     border: 1px solid #faeec8;
     border-radius: 20px;
     font-weight: bold;
@@ -194,4 +194,43 @@ button.ghost{
     & .overlay-right{
         transform: translateY(20%);
     }
+}
+/**profile page**/
+.profile-container{
+    padding: 20px 15px;
+    color:#070504;
+}
+.cover-img{
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.profile-details{
+    background: #faeec8;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.pd-row{
+    display: flex;
+    align-items: flex-start;
+}
+.pd-row h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.pd-row p{
+    font-size: 13px;
+}
+.profile-pic{
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+/**footer**/
+h6{
+    text-align: center;
 }
