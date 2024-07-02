@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body> 
+    <header>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn"></label>
+    </header>
    <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
@@ -15,7 +19,7 @@
                 <input type="text" placeholder="name">
                 <input type="email" placeholder="email">
                 <input type="password" placeholder="password">
-                <button>sign up</button>
+                <a href="feed_home.html" class="btn"><button>sign up</button></a>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -23,7 +27,7 @@
                 <h1>Sign in</h1>
                 <input type="email" placeholder="email" required>
                 <input type="password" placeholder="password" required>
-                <button>sign in</button>
+                <a href="feed_home.html" class="btn"><button>sign in</button></a>
             </form>
         </div>
         <div class="overlay-container">
@@ -36,7 +40,7 @@
                 <div class="overlay-panel overlay-right">
                     <h1>Hello friend</h1>
                     <p>enter your details to start your jounery with us</p>
-                    <button class="ghost" id="signIn" >Sign In</button>
+                    <a href="feed_home.html" class="btn"><button class="ghost" id="signIn" >Sign In</button></a>
                 </div>
             </div>
         </div>
