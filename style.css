@@ -9,6 +9,8 @@ header{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
   background: #795c34;
   height: 100px;
   width: 100%;
@@ -16,7 +18,7 @@ header{
 .logo img{
   top: -80%;
   width: 120px;
-  height: 98px;
+  height: 80px;
 }
 header ul{
   float: right;
@@ -24,6 +26,7 @@ header ul{
 }
 header ul li{
   display: inline-block;
+  font-size: 20px;
   line-height: 80px;
   margin: 0 50px;
 }
@@ -32,7 +35,11 @@ header ul li a{
   font-weight: 100;
   transition: .5s;
 }
-
+header ul li a:hover{
+  border-bottom:  1px solid #b59410;
+  color: #dbbf7b;
+  transition: .5s ease-in-out;
+}
 /**Login form**/
 h1{
     font-weight: bold;
