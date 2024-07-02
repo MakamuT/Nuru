@@ -8,16 +8,15 @@ body {
 header{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   background: #795c34;
   height: 100px;
   width: 100%;
 }
 .logo img{
-  right: 190px;
-  top: 20%;
-  padding: 0 100px;
-  width: 180px;
-  height: 160px;
+  top: -80%;
+  width: 120px;
+  height: 98px;
 }
 header ul{
   float: right;
@@ -28,6 +27,12 @@ header ul li{
   line-height: 80px;
   margin: 0 50px;
 }
+header ul li a{
+  color: #b59410;
+  font-weight: 100;
+  transition: .5s;
+}
+
 /**Login form**/
 h1{
     font-weight: bold;
@@ -47,6 +52,8 @@ a{
     margin: 15px 0;
 }
 .container{
+    margin-top: 50px;
+    margin-left: 18rem;
     position: relative;
     width: 768px;
     max-width: 100%;
