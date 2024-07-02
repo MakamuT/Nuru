@@ -5,7 +5,29 @@ body {
   font-size: 18px;
 }
 /**navigation bar**/
-
+header{
+  display: flex;
+  flex-direction: row;
+  background: #795c34;
+  height: 100px;
+  width: 100%;
+}
+.logo img{
+  right: 190px;
+  top: 20%;
+  padding: 0 100px;
+  width: 180px;
+  height: 160px;
+}
+header ul{
+  float: right;
+  margin-right: 20px;
+}
+header ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 50px;
+}
 /**Login form**/
 h1{
     font-weight: bold;
