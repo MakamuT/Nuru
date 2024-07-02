@@ -1,53 +1,161 @@
-* {
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+body {
   background-color: #dbbf7b;
-  color: #faeec8;
+  color: #070504;
   font-size: 18px;
 }
-nav{
-  background-color: #795c34;
-}
-nav img {
-  width: 190px;
-  height: 180px;
-}
-/**Login form**/
-.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10rem;
-}
-.form {
-  width: 30rem;
-  height: 10rem;
-  margin-top: -80px;
-  box-shadow: 0 8px 32px 0 #faf0be;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 10px;
-  border: 1px solid #b59410;
-}
-label{
-  margin-left: 1rem;
-}
-input {
-  margin-left: 1rem;
-  border-bottom: 1px solid #b59410;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-}
+/**navigation bar**/
 
-.btn {
-  text-align: center;
-  margin-left: 1rem;
-  background-color: #b59410;
-  border: 1px solid #dbbf7b;
-  font-size: 18px;
-  border-radius: 4px;
-  cursor: pointer;
+/**Login form**/
+h1{
+    font-weight: bold;
+    margin: 0;
 }
-.btn:hover {
-  background-color: #795c34;
+p{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: .5px;
+    margin: 20px 0 30px;
+}
+a{
+    color: #795c34;
+    font-size:14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+.container{
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    background: #b59410;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: fantasy;
+}
+.overlay-container{
+    display: none;
+}
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all .6s ease-in-out;
+}
+.sign-in-container{
+    top: 0;
+    width: 50%;
+    z-index: 2;
+}
+.sign-up-container{
+    right: 0;
+    width: 50%;
+    z-index: 1;
+}
+.form-container form{
+    height: 100%;
+    background: #faf0be;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.form-container input{
+    width: 100%;
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+}
+button{
+    background: #795c34;
+    color: #faeec8;
+    border: 1px solid #faeec8;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+button:active{
+    transform: scale(.95);
+}
+button:focus{
+    outline: none;
+}
+button.ghost{
+    background: transparent;
+    border-color: #faeec8;
+}
+.sign-up-container{
+    left: 0;
+    opacity: 0;
+}
+.overlay-container{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    overflow: hidden;
+    transition: transform .6s ease-in-out;
+}
+.overlay {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    left: -100%;
+    background: linear-gradient(to right, #b59410) no-repeat 0 0 / cover;
+    color: #070504;
+    transform: translateY(0);
+    transition: transform .6s ease-in-out;
+}
+.overlay-panel{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform .6 ease-in-out;
+}
+.overlay-right{
+    right: 0;
+    transform: translateY(0);
+}
+.overlay-left{
+    transform: translateY(-20%);
+}
+.container.right-panel-active{
+    & .sign-in-container{
+        transform: translateY(100%);
+    }
+    & .overlay-container{
+        transform: translateY(-100%);
+    }
+}
+.container.container.right-panel-active{
+    & .sign-in-container{
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 5;
+    }
+    & .overlay{
+        transform: translateX(50%);
+    }
+    & .overlay-right{
+        transform: translateY(20%);
+    }
 }
