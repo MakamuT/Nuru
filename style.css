@@ -217,17 +217,41 @@ button.ghost{
     display: flex;
     align-items: flex-start;
 }
-.pd-row h3{
+h3{
     font-size: 25px;
     font-weight: 600;
 }
-.pd-row p{
+p{
     font-size: 13px;
 }
 .profile-pic{
     width: 100px;
     margin-right: 20px;
-    border-radius: 6px;
+    border-radius: 50%;
+}
+.profile-info{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.info{
+    flex-basis: 33%;
+}
+.post{
+    flex-basis: 65%;
+}
+.profile-intro{
+    background: #faeec8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.profile-intro hr{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 24px;
 }
 
 /**footer**/
