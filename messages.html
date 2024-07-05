@@ -19,7 +19,7 @@
                 <p>Hello</p>
             </li>
             <li class="chat outgoing">
-                <p>Hi <br> how are you</p>
+                <p>Hi, how are you</p>
             </li>
         </ul>
         <div class="chat-input">
@@ -27,6 +27,25 @@
             <a href="#" class="chatbtn"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script>
+        const chatInput = document.querySelector(".chat-input textarea")
+        const sendchatBtn = document.querySelector(".chat-input a");
+        let userMessage;
+
+        const createChatLi = (message, className) => {
+            const chatLi = document.createElement("li");
+            chatLi.classList.add("chat", className);
+            let chatContent = className === "outgoing" ? `<p>${message}</p>`
+        }
+
+        const handleChat = () => {
+        userMessage = chatInput.value.trim();
+        if(!userMessage) return;
+        
+        createChatLi(userMessage, "outgoing");
+        }
+
+        sendchatBtn.addEventListener('click',handleChat);
+    </script>
 </body>
 </html>
