@@ -122,6 +122,9 @@ button{
     text-transform: uppercase;
     transition: transform 80ms ease-in;
 }
+button:hover{
+    filter: brightness(0.9);
+}
 button:active{
     transform: scale(.95);
 }
@@ -199,105 +202,125 @@ button.ghost{
         transform: translateY(20%);
     }
 }
-/**profile page**/
-.profile-container{
-    padding: 20px 15px;
-    color:#070504;
+
+/* Profile page**/
+.profile-main{
+  flex-basis: 73%;
 }
-.cover-img{
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 10px;
+.profile-sidebar{
+  flex-basis: 25%;
+  align-self: flex-start;
+  position: sticky;
+  top: 73%;
 }
-.profile-details{
-    background: #faeec8;
-    padding: 20px;
-    border-radius: 4px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+.profile{
+  background: #faeec8;
 }
-.pd-row{
-    display: flex;
-    align-items: flex-start;
-}
-h3{
-    font-size: 25px;
-    font-weight: 600;
-}
-p{
-    font-size: 13px;
+.inner-profile{
+  padding: 0 4% 10px;
 }
 .profile-pic{
-    width: 100px;
-    margin-right: 20px;
-    border-radius: 50%;
+  width: 150px;
+  border-radius: 50%;
+  margin-top: -75%;
+  padding: 5px;
+  background: #faf0be;
+}
+.profile b{
+  font-weight: 600;
+}
+.profile p{
+  margin-top: 5px;
+}
+.connection{
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.connection img{
+  width: 50px;
+  border-radius: 45%;
+  margin-right: 5px;
+}
+.profilebtn{
+  margin: 20px 0;
+}
+.profilebtn a{
+  display: inline-flex;
+  align-items: center;
+  background: yellow;
+  padding: 6px 15px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.profilebtn a i{
+  width: 18px;
+  margin-right: 5px;
+}
+.profilebtn .primarybtn{
+  background: #b59410;
+  color: #070504;
 }
 .profile-info{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-top: 20px;
+  background: #faeec8;
+  padding: 20px 4% 30px;
+  margin: 12px 0;
 }
-.info{
-    flex-basis: 33%;
+.profile-info h2{
+  color: #070504;
+  margin: 10px 0 20px;
+  font-weight: 600;
 }
-.post{
-    flex-basis: 65%;
+.seemore{
+  display: block;
+  text-align: right;
+  font-size: 15px;
 }
-.profile-intro{
-    background: #faeec8;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
+.pi-row{
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
 }
-.profile-intro hr{
-    border: 0;
-    height: 1px;
-    background: #b59410;
-    margin: 24px 0;
+.pi-row img{
+  width: 50px;
+  margin-right: 25px;
+  margin-top: 5px;
 }
-.profile-intro ul li{
-    list-style: none;
-    font-size: 15px;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.pi-row div{
+  width: 100%;
 }
-.box{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.pi-row h3{
+  font-size: 18px;
+  font-weight: 600;
 }
-.photobox{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 10px;
-    margin-top: 15px;
+.pi-row b{
+  display: block;
+  font-weight: 500;
+  font-size: 15px;
 }
-.photobox div img{
-    width: 100%;
-    cursor: pointer;
+.pi-row p{
+  margin-top: 15px;
 }
-.networkbox{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 10px;
-    margin-top: 15px;
+.exlink{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  font-weight: 500;
 }
-.networkbox img{
-    width: 100%;
-    cursor: pointer;
-    padding-bottom: 50px;
+.skillsbtn{
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  border: 1px solid yellow;
+  font-size: 12px;
+  font-weight: 500;
 }
-.networkbox div{
-    position: relative;
-}
-.networkbox p{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+hr{
+  border: 0;
+  border-bottom: 1px solid #b59410;
+  margin-top: 10px;
 }
 
 /**messages page**/
