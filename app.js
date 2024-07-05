@@ -1,3 +1,4 @@
+/*singin page */
 const byId = (id) => {
     return document.getElementById(id);
 };
@@ -17,3 +18,8 @@ $signInButton.addEventListener(
         $container.classList.remove('right-panel-active')
     },
 );
+/*message page*/
+const sendchatBtn = document.querySelector(".chat-input a");
+let userMessage;
+const handleChat = () => {}
+sendchatBtn.addEventListener('click',handleChat);
