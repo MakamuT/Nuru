@@ -7,6 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="app.js"></script>
+    <button class="chatbox-toggler">
+        <a href="feed_home.html"><i class="fa fa-times" aria-hidden="true"></i></a>
+    </button>
+    </a>
+    <div class="chatbox">
+            <h2>Messages</h2>
+        <ul class="chats">
+            <li class="chat incoming">
+                <img src="img/user.png">
+                <p>Hello</p>
+            </li>
+            <li class="chat outgoing">
+                <p>Hi, how are you</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter Message...." required></textarea>
+            <a href="#" class="chatbtn"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <script>
+        const chatInput = document.querySelector(".chat-input textarea")
+        const sendchatBtn = document.querySelector(".chat-input a");
+        let userMessage;
+
+        const createChatLi = (message, className) => {
+            const chatLi = document.createElement("li");
+            chatLi.classList.add("chat", className);
+            let chatContent = className === "outgoing" ? `<p>${message}</p>`
+        }
+
+        const handleChat = () => {
+        userMessage = chatInput.value.trim();
+        if(!userMessage) return;
+        
+        createChatLi(userMessage, "outgoing");
+        }
+
+        sendchatBtn.addEventListener('click',handleChat);
+    </script>
 </body>
 </html>

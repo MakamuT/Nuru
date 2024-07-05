@@ -1,3 +1,4 @@
+/*singin page */
 const byId = (id) => {
     return document.getElementById(id);
 };
