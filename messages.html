@@ -18,9 +18,11 @@
                 <img src="img/user.png">
                 <p>Hello</p>
             </li>
+            <!--
             <li class="chat outgoing">
                 <p>Hi, how are you</p>
             </li>
+            -->
         </ul>
         <div class="chat-input">
             <textarea placeholder="Enter Message...." required></textarea>
@@ -28,21 +30,26 @@
         </div>
     </div>
     <script>
-        const chatInput = document.querySelector(".chat-input textarea")
+        const chatInput = document.querySelector(".chat-input textarea");
         const sendchatBtn = document.querySelector(".chat-input a");
+        const chatbot = document.querySelector(".chats");
         let userMessage;
 
         const createChatLi = (message, className) => {
             const chatLi = document.createElement("li");
             chatLi.classList.add("chat", className);
-            let chatContent = className === "outgoing" ? `<p>${message}</p>`
-        }
+            let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<img src="img/user.png"><p>${message}</p>`;
+            chatLi.innerHTML = chatContent;
+            return chatLi;
+        } 
 
         const handleChat = () => {
         userMessage = chatInput.value.trim();
         if(!userMessage) return;
         
-        createChatLi(userMessage, "outgoing");
+        chatbot.appendChild(createChatLi (userMessage, "outgoing"));
+
+        
         }
 
         sendchatBtn.addEventListener('click',handleChat);
