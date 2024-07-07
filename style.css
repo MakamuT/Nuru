@@ -4,7 +4,7 @@
     padding: 0;
 }
 body {
-  background-color: #fffaf0;
+  background-color: #f0be90;
   color: #070504;
   font-size: 18px;
 }
@@ -15,8 +15,8 @@ header{
   flex-wrap: wrap;
   position: sticky;
   top: 0;
-  background: #795c34;
-  height: 100px;
+  background: #fbfaf2;
+  height: 80px;
   width: 100%;
 }
 .logo img{
@@ -69,7 +69,7 @@ a{
     width: 768px;
     max-width: 100%;
     min-height: 480px;
-    background: #b59410;
+    background: #994F55;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -96,7 +96,7 @@ a{
 }
 .form-container form{
     height: 100%;
-    background: #ffd700;
+    background: #f0be90;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
@@ -112,7 +112,7 @@ a{
     margin: 8px 0;
 }
 button{
-    background: yellow;
+    background: #994F55;
     color: #070504;
     border: 1px solid #faeec8;
     border-radius: 20px;
@@ -132,7 +132,7 @@ button:focus{
     outline: none;
 }
 button.ghost{
-    background: transparent;
+    background: #f0be90;
     border-color: #faeec8;
 }
 .sign-up-container{
@@ -204,13 +204,17 @@ button.ghost{
 }
 
 /* Profile page**/
+.profile-container{
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+}
 .profile-main{
-  width: 55vw;
+  width: 70vw;
 }
 .profile-sidebar{
-  width: 40vw;
   align-self: flex-start;
-  position: sticky;
+  /*position: sticky;*/
   top: 73%;
 }
 .profile{
@@ -248,7 +252,8 @@ button.ghost{
 .profilebtn a{
   display: inline-flex;
   align-items: center;
-  background: yellow;
+  background: #994F55;
+  color: #faf0be;
   padding: 6px 15px;
   border-radius: 4px;
   margin-right: 10px;
@@ -258,7 +263,7 @@ button.ghost{
   margin-right: 5px;
 }
 .profilebtn .primarybtn{
-  background: #b59410;
+  background: #f0be90;
   color: #070504;
 }
 .profile-info{
@@ -322,8 +327,68 @@ hr{
   border-bottom: 1px solid #b59410;
   margin-top: 10px;
 }
-.spotify-container{
-  background-color: #070504;
+ .spotify-container{
+  padding: 20px 40px;
+  align-self: flex-start;
+  border-radius: 15px;
+  background: #070504;
+  color: #fbfaf2;
+ }
+ .spotify-container h2{
+  font-size: 22px;
+  margin-bottom: 20px;
+ }
+ .spotify-container .list{
+  display: flex;
+  font-size: 22px;
+  margin-bottom: 20px;
+ }
+ .spotify-container .list .item{
+  min-width: 140px;
+  width: 160px;
+  padding: 15px;
+  background-color: #181818;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all ease .4s;
+ }
+ .spotify-container .list .item:hover{
+  background-color: #252525;
+ }
+ .spotify-container .item img{
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+ }
+ .play{
+  position: relative;
+ }
+ .spotify-container .list .item .play .fa{
+  position: absolute;
+  right: 10px;
+  top: -60px;
+  padding: 13px;
+  background-color: #1db954;
+  border-radius: 100%;
+  opacity: 0;
+  transition: all ease .4s;
+ }
+ .spotify-container .list .item:hover .play .fa{
+  opacity: 1;
+  transform: translateY(-20px);
+ }
+ .spotify-container .list .item h4{
+  font-size: 14px;
+  margin: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+.spotify-container .list .item p{
+  color: #994F55;
+  font-size: 12px;
+  line-height: 20px;
+
 }
 
 /**messages page**/

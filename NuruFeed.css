@@ -73,7 +73,7 @@ width: 20px;
 .left-sec{
     flex-basis: 25%;
     align-self: flex-start;
-    background-color: #ff;
+    background-color: #fff;
     border-radius: 25px;
 }
 .sidebar-box{
