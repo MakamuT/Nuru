@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #c9cdd2;
+    background: #402700;
     color: #402700;
 }
 
@@ -54,6 +54,7 @@ width: 20px;
 
 .nav-propic {
     width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: block;
     cursor: pointer;
@@ -63,7 +64,7 @@ width: 20px;
 
 .container{
     padding: 20px 6%;
-    dispaly: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -71,16 +72,22 @@ width: 20px;
 .left-sec{
     flex-basis: 25%;
     align-self: flex-start;
+    background-color: #faeec8;
+    border-radius: 25px;
 }
 .sidebar-box{
-    background: #f0f2f5;
+    background: #faeec8;
+    border-radius: 25px;
 }
-
+.sidebar-box img{
+    border-radius: 25px;
+}
 .sidebar-info {
     padding: 0 25px;
 }
 .sidebar-info img{
 width: 90px;
+height: 90px;
 border-radius: 50%;
 background: #f0f2f5;
 padding: 4px;
@@ -89,7 +96,7 @@ margin-top: -45px;
 .sidebar-info h1{
     font-size:20px;
     font-weight:600;
-    color:#222;
+    color:#402700;
 }
 .sidebar-info h3{
     font-size: 14px;
@@ -113,16 +120,21 @@ margin-top: -45px;
 /* right section */
 .right-sec{
     flex-basis: 25%;
-    align-self:flex-end;
+    align-self:flex-start;
+    color: #402700;
+    background-color: ;
 }
 .news{
-    background: #fff;
+    background: #faeec8;
+    border-radius: 25px;
     padding: 10px 25px;
 }
 .news h3{
     font-size:18px;
 
-}.news a{
+}
+
+.news a{
     display:block;
     font-size:12px;
     font-weight:600;
@@ -150,6 +162,7 @@ flex-basis: 47%;
 
 .create{
     background: #fff;
+    border-top-left-radius: 25px;
 }
 
 .create-input{
@@ -160,6 +173,7 @@ flex-basis: 47%;
 
 .create-input img{
     width:35px;
+    height:35px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -170,4 +184,151 @@ flex-basis: 47%;
     resize: none;
     background: transparent;
     margin-top: 8px;
+}
+::placeholder{
+    font-weight:500;
+
+}
+.create-link{
+    display: flex;
+    align-items: flex-start;
+}
+.create-link li{
+    list-style: none;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+    flex-basis: 25%;
+    height: 40px;
+    font-size: 13px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    cursor:pointer;
+    background: #faeec8;
+    
+}
+
+.create-link li img{
+    width: 15px;
+    margin-right: 5px;
+}
+
+.create-link li:last-child{
+    background: #613d00;
+    color: #fff;
+    border-top:0;
+    border-right:0;
+}
+
+.sorted{
+    display: flex;
+    align-items: center;
+    margin:10px 0;
+}
+.sorted img{
+    width: 15px;
+}
+.sorted hr{
+    flex: 1;
+    border: 0;
+    height: 1px;
+    background:#ccc;
+}
+.sorted p{
+
+    font-size: 13px;
+    padding-left:5px;
+}
+
+.sorted p span{
+    font-weight: 600;
+    cursor: pointer;
+
+}
+.sorted p span img{
+    width: 12px;
+    margin-left:3px;
+}
+.author{
+    display:flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    /* background-color: #fff;
+    padding: 2rem; */
+}
+.author img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right:10px;
+    margin-top: 5px;
+
+}
+.author h1{
+    font-size:18px;
+    font-weight: 600;
+    color:#333;
+}
+.author small{
+    display: block;
+    margin-bottom: -2px;
+}
+
+.post{
+    color: #402700;
+    background-color: #faeec8;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+}
+.post p{
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.post-stats{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    border-bottom: 10px solid #ccc;
+    /* padding-bottom:6px ; */
+}
+.post-stats div{
+    display:flex;
+    align-items: center;
+
+}
+
+.post-stats img{
+    width: 15px;
+    margin-right:-5px;
+}
+.reactions{
+    margin-left: 10px;
+}
+.activity{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+.activity div{
+    display:flex;
+    align-items: center;
+}
+.acivity-icon-user {
+    width:22px;
+    border-radius: 50%;
+}
+.acivity-icon-arrow{
+    width: 12px;
+    margin-left: 5px;
+}
+.activity-link img {
+    width:18px;
+    margin-right: 8px;
 }
