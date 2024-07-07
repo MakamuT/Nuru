@@ -18,9 +18,6 @@
                 <img src="img/user.png">
                 <p>Hello</p>
             </li>
-            <li class="chat outgoing">
-                <p>Hi, how are you</p>
-            </li>
         </ul>
         <div class="chat-input">
             <textarea placeholder="Enter Message...." required></textarea>
@@ -28,22 +25,39 @@
         </div>
     </div>
     <script>
-        const chatInput = document.querySelector(".chat-input textarea")
+        const chatInput = document.querySelector(".chat-input textarea");
         const sendchatBtn = document.querySelector(".chat-input a");
+        const chatbot = document.querySelector(".chats");
         let userMessage;
+        const inputInitHeight = chatInput.scrollHeight;
 
         const createChatLi = (message, className) => {
             const chatLi = document.createElement("li");
             chatLi.classList.add("chat", className);
-            let chatContent = className === "outgoing" ? `<p>${message}</p>`
-        }
+            let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<img src="img/user.png"><p>${message}</p>`;
+            chatLi.innerHTML = chatContent;
+            /**chatLI.querySelector("p").textContent = message;**/
+            return chatLi;
+        } 
 
         const handleChat = () => {
         userMessage = chatInput.value.trim();
         if(!userMessage) return;
+        chatInput.value = ""; 
         
-        createChatLi(userMessage, "outgoing");
+        chatbot.appendChild(createChatLi (userMessage, "outgoing"));
+        chatbot.scroll(0, chatbot.scrollHeight);
+
+        setTimeout(() => {
+            chatbot.appendChild(createChatLi ("Opps! something went wrong. Please try again.", "incoming"));
+            chatbot.scroll(0, chatbot.scrollHeight);
+        }, 600);
         }
+
+        chatInput.addEventListener("input", () => {
+            chatInput.style.height = `${inputInitHeight}px`;
+            chatInput.style.height = `${chatInput.scrollHeight}px`;
+        });
 
         sendchatBtn.addEventListener('click',handleChat);
     </script>

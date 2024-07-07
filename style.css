@@ -357,7 +357,7 @@ hr{
 .chatbox .chats{
   height: 400px;
   overflow-y: auto;
-  padding: 30px 20px 70px;
+  padding: 30px 20px 100px;
 }
 .chatbox .chat{
   display: flex;
@@ -368,6 +368,7 @@ hr{
   border-radius: 10px 10px 0 10px;
   background: #795c34;
   font-size: 0.95rem;
+  white-space: pre-wrap;
 }
 .chatbox .outgoing{
   justify-content: flex-end;
