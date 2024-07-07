@@ -20,7 +20,7 @@ a{
     display: flex;
     align-items:center;
     justify-content: space-between;
-    background:#fff;
+    background:#fbfaf2;
     padding:6px 6%;
     position: sticky;
     top:0;
@@ -73,12 +73,13 @@ width: 20px;
 .left-sec{
     flex-basis: 25%;
     align-self: flex-start;
-    background-color: #faeec8;
+    background-color: #ff;
     border-radius: 25px;
 }
 .sidebar-box{
-    background: #faeec8;
+    background: #fff;
     border-radius: 25px;
+    padding-bottom: 10px;
 }
 .sidebar-box img{
     border-radius: 25px;
@@ -113,6 +114,7 @@ margin-top: -45px;
     margin:5px 0;
     font-size: 13px;
 }
+
 .sidebar-info ul li span{
     float: right;
     color: #045be6;
@@ -126,7 +128,7 @@ margin-top: -45px;
     background-color: ;
 }
 .news{
-    background: #faeec8;
+    background: #fff;
     border-radius: 25px;
     padding: 10px 25px;
 }
@@ -163,7 +165,7 @@ flex-basis: 47%;
 
 .create{
     background: #fff;
-    border-top-left-radius: 25px;
+    border-radius: 25px;
 }
 
 .create-input{
@@ -205,22 +207,26 @@ flex-basis: 47%;
     align-items:center;
     justify-content: center;
     cursor:pointer;
-    background: #faeec8;
+    background: #fff;
     
+}
+
+.create-link li:first-child{
+    border-bottom-left-radius:25px ;
+}
+
+.create-link li:last-child{
+    background: #994F55;
+    color: #fff;
+    border-top:0;
+    border-right:0;
+    border-bottom-right-radius:25px;
 }
 
 .create-link li img{
     width: 15px;
     margin-right: 5px;
 }
-
-.create-link li:last-child{
-    background: #613d00;
-    color: #fff;
-    border-top:0;
-    border-right:0;
-}
-
 .sorted{
     display: flex;
     align-items: center;
@@ -236,7 +242,6 @@ flex-basis: 47%;
     background:#ccc;
 }
 .sorted p{
-
     font-size: 13px;
     padding-left:5px;
 }
@@ -244,7 +249,6 @@ flex-basis: 47%;
 .sorted p span{
     font-weight: 600;
     cursor: pointer;
-
 }
 .sorted p span img{
     width: 12px;
@@ -277,10 +281,12 @@ flex-basis: 47%;
 
 .post{
     color: #402700;
-    background-color: #faeec8;
+    background-color: #fff;
     padding: 10px;
     margin: 10px;
     border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+
 }
 .post p{
     font-size: 14px;
