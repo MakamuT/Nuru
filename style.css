@@ -4,7 +4,7 @@
     padding: 0;
 }
 body {
-  background-color: #795c34;
+  background-color: #fffaf0;
   color: #070504;
   font-size: 18px;
 }
@@ -96,7 +96,7 @@ a{
 }
 .form-container form{
     height: 100%;
-    background: #faf0be;
+    background: #ffd700;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
@@ -205,10 +205,10 @@ button.ghost{
 
 /* Profile page**/
 .profile-main{
-  flex-basis: 73%;
+  width: 55vw;
 }
 .profile-sidebar{
-  flex-basis: 25%;
+  width: 40vw;
   align-self: flex-start;
   position: sticky;
   top: 73%;
@@ -321,6 +321,9 @@ hr{
   border: 0;
   border-bottom: 1px solid #b59410;
   margin-top: 10px;
+}
+.spotify-container{
+  background-color: #070504;
 }
 
 /**messages page**/
