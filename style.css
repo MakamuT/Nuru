@@ -101,7 +101,7 @@ a{
 .sign-up-container{
     right: 0;
     width: 50%;
-    z-index: 1;
+    z-index: 2;
 }
 .form-container form{
     height: 100%;
@@ -151,7 +151,7 @@ button.ghost{
 .overlay-container{
     display: block;
     position: absolute;
-    z-index: 100;
+    z-index: 100; 
     width: 50%;
     height: 100%;
     top: 0;
@@ -164,7 +164,7 @@ button.ghost{
     height: 100%;
     width: 200%;
     left: -100%;
-    background: linear-gradient(to right, #b59410) no-repeat 0 0 / cover;
+    background: linear-gradient(to right, #994F55) no-repeat 0 0 / cover;
     color: #070504;
     transform: translateY(0);
     transition: transform .6s ease-in-out;
@@ -198,8 +198,8 @@ button.ghost{
         transform: translateY(-100%);
     }
 }
-.container.container.right-panel-active{
-    & .sign-in-container{
+.container.right-panel-active{
+    & .sign-up-container{
         transform: translateX(100%);
         opacity: 1;
         z-index: 5;
@@ -427,7 +427,7 @@ hr{
   box-shadow: 0 0 120px rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
 .chatbox h2{
-  background: #795c34;
+  background: #994F55;
   padding: 16px 0;
   text-align: center;
   color: #faf0be;
@@ -445,7 +445,7 @@ hr{
   max-width: 75%;
   padding: 12px 16px;
   border-radius: 10px 10px 0 10px;
-  background: #795c34;
+  background: #f0be90;
   font-size: 0.95rem;
   white-space: pre-wrap;
 }
@@ -461,7 +461,7 @@ hr{
 }
 .chatbox .incoming p{
   color: #eee;
-  background: #b59410;
+  background: #994F55;
   border-radius: 10px 10px 10px 0;
 }
 .chatbox .chat-input{
@@ -485,7 +485,7 @@ hr{
 }
 .chat-input a{
   align-self: flex-end;
-  color: #b59410;
+  color: #994F55;
   font-size: 1.35rem;
   cursor: pointer;
   height: 55px;
