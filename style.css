@@ -35,16 +35,15 @@ header ul li{
   /*margin: 0 20px;*/
 }
 header ul li a{
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 200;
-  
   gap: .5px;
   font-weight: 100;
   transition: .5s;
 }
 header ul li a:hover{
-  border-bottom:  1px solid #b59410;
-  color: #dbbf7b;
+  border-bottom:  2px solid #b59410;
+  color: #f0be90;
   transition: .5s ease-in-out;
 }
 header ul li a img{
@@ -66,7 +65,7 @@ p{
     margin: 20px 0 30px;
 }
 a{
-    color: #795c34;
+    color: #994F55;
     font-size:14px;
     text-decoration: none;
     margin: 15px 0;
@@ -228,6 +227,7 @@ button.ghost{
 }
 .profile{
   background: #faeec8;
+  border-radius: 25px;
 }
 .inner-profile{
   padding: 0 4% 10px;
@@ -279,6 +279,7 @@ button.ghost{
   background: #faeec8;
   padding: 20px 4% 30px;
   margin: 12px 0;
+  border-radius: 25px;
 }
 .profile-info h2{
   color: #070504;
@@ -294,6 +295,7 @@ button.ghost{
   display: flex;
   align-items: flex-start;
   margin: 20px 0;
+  border-radius: 25px;
 }
 .pi-row img{
   width: 50px;
@@ -471,7 +473,7 @@ hr{
   gap: 5px;
   width: 100%;
   border-top: 1px solid #b59410;
-  background: #fff;
+  background: #faeec8;
   padding: 5px 20px;
 }
 .chat-input textarea{
@@ -480,6 +482,7 @@ hr{
   border: none;
   outline: none;
   font-size: .95rem;
+  background: transparent;
   resize: none;
   padding: 16px 15px 16px 0;
 }
