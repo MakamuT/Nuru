@@ -50,7 +50,7 @@ a{
 }
 
 .nav-mid ul li a img {
-width: 20px;
+width: 15px;
 }
 
 .nav-propic {
@@ -122,10 +122,12 @@ margin-top: -45px;
 
 /* right section */
 .right-sec{
+    display:flex;
+    flex-direction:column;
     flex-basis: 25%;
     align-self:flex-start;
     color: #402700;
-    background-color: ;
+    gap: 25px;
 }
 .news{
     background: #fff;
@@ -143,8 +145,8 @@ margin-top: -45px;
     font-weight:600;
     margin-top: 10px;
     margin-bottom: -5px;
-
 }
+
 .news span{
     font-size:12px;
 }
@@ -159,6 +161,16 @@ margin-top: -45px;
     margin-top:15;
 }
 
+.instagram{
+    background: #1C1B1B;
+    border-radius: 25px;
+    padding:10px 25px;
+}
+.twitter{
+    background: #1C1B1B;
+    border-radius: 25px;
+    padding:10px 25px;
+}
 .main-sec {
 flex-basis: 47%;
 }
@@ -239,7 +251,7 @@ flex-basis: 47%;
     flex: 1;
     border: 0;
     height: 1px;
-    background:#ccc;
+    background:#402700;
 }
 .sorted p{
     font-size: 13px;
