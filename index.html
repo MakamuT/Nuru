@@ -5,38 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nuru Login</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js"></script>
+    <script src="app.js"></script>
   </head>
   <body> 
     <header>
-      <a href="" class="logo">
-        <img src="" alt="">
-      </a>
       <ul>
         <li><a href="feed_home.html" class="active">Home</a></li>
         <li><a href="">My network</a></li>
         <li><a href="">Events</a></li>
-        <li><a href="">Notifications</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
         <li><a href="messages.html">Messages</a></li>
         <li><a href="profile.html"><img src="img/20230221_051213.jpg"></a></li>
       </ul>
     </header>
    <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form >
                 <h1>Create Account</h1>
-                <input type="text" placeholder="name">
-                <input type="email" placeholder="email">
-                <input type="password" placeholder="password">
-                <input type="text" placeholder="username">
-                <a href="profile.html" class="btn"><button>sign up</button></a>
+                <input type="text" placeholder="fullname" id="name">
+                <input type="email" placeholder="email" id="email">
+                <input type="text" placeholder="username" id="username">
+                <input type="password" placeholder="password" id="password">
+                <a href="profile.html" class="btn"><button onclick="register">sign up</button></a>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="">
+            <form id="form">
                 <h1>Sign in</h1>
                 <input type="email" placeholder="email" required>
                 <input type="password" placeholder="password" required>
-                <a href="profile.html" class="btn"><button>sign in</button></a>
+                <a href="profile.html" class="btn"><button type="submit">sign in</button></a>
             </form>
         </div>
         <div class="overlay-container">
@@ -44,18 +45,36 @@
                 <div class="overlay-panel overlay-left">
                     <h1>welcome back</h1>
                     <p>Login to keep shining your light</p>
-                    <button class="ghost" id="signIn" >Sign In</button>
+                    <button type="submit" class="ghost" id="signIn" >Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hello friend</h1>
                     <p>Find your light</p>
-                    <button class="ghost" id="signUp" >Sign up</button>
+                    <button type="submit" class="ghost" id="signUp" >Sign up</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
   </body>
+   <!--<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js"></script>
+    <script src="app.js"></script>-->
+    <script>
+      const byId = (id) => {
+  return document.getElementById(id);
+};
+const $signUpButton = byId("signUp");
+const $signInButton = byId("signIn");
+const $container = byId("container");
+
+$signUpButton.addEventListener("click", () => {
+  $container.classList.add("right-panel-active");
+});
+$signInButton.addEventListener("click", () => {
+  $container.classList.remove("right-panel-active");
+});
+    </script>
   <footer>
     <h6>Created by Thembisile Makamu and Thabiso Ngwenya</h6>
   </footer>

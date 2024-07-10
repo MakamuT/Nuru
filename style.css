@@ -19,11 +19,6 @@ header{
   height: 80px;
   width: 100%;
 }
-.logo img{
-  top: -80%;
-  width: 120px;
-  height: 80px;
-}
 header ul{
   float: right;
   margin-right: 70px;
@@ -132,6 +127,7 @@ button{
 }
 button:hover{
     filter: brightness(0.9);
+    
 }
 button:active{
     transform: scale(.95);
@@ -142,6 +138,9 @@ button:focus{
 button.ghost{
     background: #f0be90;
     border-color: #faeec8;
+}
+button.ghost:hover{
+  background: #994F55;
 }
 .sign-up-container{
     left: 0;
@@ -219,6 +218,7 @@ button.ghost{
 }
 .profile-main{
   width: 70vw;
+  margin-left: 25px;
 }
 .profile-sidebar{
   align-self: flex-start;
@@ -498,6 +498,10 @@ hr{
 .chat-input textarea:valid ~ a{
   visibility: visible;
 }
+
+/**notifications page*/
+
+
 
 /**footer**/
 h6{
