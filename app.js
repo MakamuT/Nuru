@@ -1,16 +1,20 @@
 //firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyAFoZkKbhUnNW1do4SBAHi3kybAa70j_So",
-  authDomain: "nuru-e277e.firebaseapp.com",
-  databaseURL: "https://nuru-e277e-default-rtdb.firebaseio.com",
-  projectId: "nuru-e277e",
-  storageBucket: "nuru-e277e.appspot.com",
-  messagingSenderId: "897726335752",
-  appId: "1:897726335752:web:64e1eda2ee51973042fabd",
+  apiKey: "AIzaSyDTiy_S3Q8WIG3RfJjyS40MX_oTax0mDIc",
+  authDomain: "nuru-a1228.firebaseapp.com",
+  projectId: "nuru-a1228",
+  storageBucket: "nuru-a1228.appspot.com",
+  messagingSenderId: "180247976695",
+  appId: "1:180247976695:web:8bac743ab3c790746491f2",
+  measurementId: "G-1WEWFXQVLJ",
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp({
+  apiKey: "AIzaSyDTiy_S3Q8WIG3RfJjyS40MX_oTax0mDIc",
+  authDomain: "nuru-a1228.firebaseapp.com",
+  projectId: "nuru-a1228",
+});
 
 // Initialize variables
 const auth = firebase.auth();

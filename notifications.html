@@ -7,15 +7,90 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body> 
-    <header>
-      <ul>
-        <li><a href="feed_home.html">Home</a></li>
-        <li><a href="">My network</a></li>
-        <li><a href="notifications.html">Notifications</a></li>
-        <li><a href="messages.html">Messages</a></li>
-        <li><a href="profile.html">Profile</a></li>
-      </ul>
-    </header>
+    <nav class="navbar">
+        <div class="nav-left"> 
+            <a href="index.html" class="logo"><img src="img/Nuru.png" alt="logo for website"></a>
+        </div> 
+        <div class="nav-mid">
+            <ul>
+                <li><a href="#"><img src="img/house.png" alt=""><span>Home</span></a></li>
+                <li><a href="#"><img src="img/handshake.png" alt=""><span>Relationships</span></a></li>
+                <li><a href="#"><img src="img/social-communication-disorder.png" alt=""><span>Messages</span></a></li>
+                <li><a href="#"><img src="img/bell.png" alt=""><span>Notifications</span></a></li>
+                <!-- <li><a href="feed_home.html"><img src="img/home.png" alt=""><span>Home</span></a></li> -->
+            </ul>
+        </div>
+        <div class="nav-right">
+            <img src="img/user.png" class="nav-propic">
+        </div>
+    </nav>
+    <div class="ncontainer">
+      <header>
+        <div class="noti-box">
+          <h2 class="title">Notifications</h2>
+          <span id="notifications"></span>
+        </div>
+        <p id="mark-all">Mark all as read</p>
+      </header>
+      <main>
+        <div class="noti-card unread">
+          <img src="img/user.png" alt="">
+          <div class="description">
+            <p class="user-activity">
+              <strong>Thembi</strong> reacted to your post <b>Sunsets are my muse</b>
+            </p>
+            <p class="time">3m ago</p>
+          </div>
+        </div>
+        <div class="noti-card unread">
+          <img src="img/user.png" alt="">
+          <div class="description">
+            <p class="user-activity">
+              <strong>Thembi</strong> reacted to your post <b>Sunsets are my muse</b>
+            </p>
+            <p class="time">3m ago</p>
+          </div>
+        </div>
+        <div class="noti-card unread">
+          <img src="img/user.png" alt="">
+          <div class="description">
+            <p class="user-activity">
+              <strong>Ace</strong> Followed you
+            </p>
+            <p class="time">3m ago</p>
+          </div>
+        </div>
+        <div class="noti-card">
+          <img src="img/20221026_051507.jpg" alt="">
+          <div class="description">
+            <p class="user-activity">
+              <strong>Lebo M</strong> commented on your photo
+            </p>
+            <p class="time">3 weeks ago</p>
+          </div>
+           <img src="img/20230221_051213.jpg" alt="">
+        </div>
+        <div class="noti-card">
+          <img src="img/20221026_051507.jpg" alt="">
+          <div class="description">
+            <p class="user-activity">
+              <strong>Lebo M</strong> commented on your photo
+            </p>
+            <p class="time">3 weeks ago</p>
+          </div>
+          </div>
+          <div class="noti-card">
+          <img src="img/20221026_051507.jpg" alt="">
+          <div class="description">
+            <p class="user-activity">
+              <strong>Lebo M</strong> commented on your photo
+            </p>
+            <p class="time">3 weeks ago</p>
+          </div>
+           <img src="img/20230221_051213.jpg" alt="">
+        </div>
+      </main>
+    </div>
    
   </body>
 </html>
