@@ -222,10 +222,11 @@ button.ghost:hover{
 .profile-container{
   display: flex;
   flex-direction: row;
+  margin-left: 20rem;
   gap: 45px;
 }
 .profile-main{
-  width: 70vw;
+  width: 50vw;
   margin-left: 25px;
 }
 .profile-sidebar{
@@ -409,7 +410,6 @@ hr{
   color: #994F55;
   font-size: 12px;
   line-height: 20px;
-
 }
 
 /**messages page**/
@@ -512,8 +512,9 @@ hr{
   background-color: #faeec8;
   border-radius: .5rem;
   margin: 2rem;
+  margin-left: 30rem;
   padding: 1.5rem 1rem;
-  width: 700px;
+  width: 400px;
 }
 header{
   align-items: center;
@@ -546,19 +547,19 @@ header{
 main{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .5rem;
 }
 .noti-card{
   align-items: center;
   border-radius: .5rem;
   display: flex;
-  padding: 1rem;
+  padding: .20rem;
 }
 .time{
   margin-top: -30px;
 }
-img{
-  width: 50px;
+.user{
+  width: 25px;
 }
 .description{
   display: flex;
@@ -570,11 +571,11 @@ strong{
   color: #994F55;
   cursor: pointer;
 }
-strong:hover{
+strong:hover{ 
   color: #f0be90;
 }
-/*.unread{
-  background: #994F55 !important; 
+.unread{
+  background: #f0be90 !important; 
 }
 .unread p:first-of-type::after{
   background-color: #f0be90;
@@ -583,7 +584,7 @@ strong:hover{
   display: inline-block;
   height: 10px;
   width: 10px;
-}*/
+}
 
 
 /**footer**/
