@@ -222,7 +222,7 @@ button.ghost:hover{
 .profile-container{
   display: flex;
   flex-direction: row;
-  margin-left: 20rem;
+  margin-left: 16rem;
   gap: 45px;
 }
 .profile-main{
