@@ -47,7 +47,7 @@ a{
     font-size: 14px;
     margin: 5px 8px;
     padding-right: 5px;
-    color: #795c34;
+    color: #994F55 ;
 }
 
 .nav-mid span{
@@ -57,7 +57,7 @@ a{
 }
 .nav-mid .fa-solid{
     align-self: center;
-    color: #994F55;
+    color: #dc9858;
     font-size: 20px;
 }
 .nav-mid a:hover{

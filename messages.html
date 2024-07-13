@@ -10,9 +10,8 @@
     <button class="chatbox-toggler">
         <a href="feed_home.html"><i class="fa fa-times" aria-hidden="true"></i></a>
     </button>
-    </a>
     <div class="chatbox">
-            <h2>Messages</h2>
+        <h2>Messages</h2>
         <ul class="chats">
             <li class="chat incoming">
                 <img src="img/user.png">
@@ -25,7 +24,9 @@
         </div>
     </div>
     
+    <script src="/socket.io/socket.io.js"></script>
     <script>
+        const socket = io();
         const chatInput = document.querySelector(".chat-input textarea");
         const sendchatBtn = document.querySelector(".chat-input a");
         const chatbot = document.querySelector(".chats");
@@ -37,30 +38,31 @@
             chatLi.classList.add("chat", className);
             let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<img src="img/user.png"><p>${message}</p>`;
             chatLi.innerHTML = chatContent;
-            /**chatLI.querySelector("p").textContent = message;**/
             return chatLi;
-        } 
+        };
 
         const handleChat = () => {
-        userMessage = chatInput.value.trim();
-        if(!userMessage) return;
-        chatInput.value = ""; 
-        
-        chatbot.appendChild(createChatLi (userMessage, "outgoing"));
-        chatbot.scroll(0, chatbot.scrollHeight);
+            userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+            chatInput.value = ""; 
 
-        setTimeout(() => {
-            chatbot.appendChild(createChatLi ("Opps! something went wrong. Please try again.", "incoming"));
+            chatbot.appendChild(createChatLi(userMessage, "outgoing"));
             chatbot.scroll(0, chatbot.scrollHeight);
-        }, 600);
-        }
+
+            socket.emit('chat message', userMessage);
+        };
 
         chatInput.addEventListener("input", () => {
             chatInput.style.height = `${inputInitHeight}px`;
             chatInput.style.height = `${chatInput.scrollHeight}px`;
         });
 
-        sendchatBtn.addEventListener('click',handleChat);
+        sendchatBtn.addEventListener('click', handleChat);
+
+        socket.on('chat message', (msg) => {
+            chatbot.appendChild(createChatLi(msg, "incoming"));
+            chatbot.scroll(0, chatbot.scrollHeight);
+        });
     </script>
 </body>
 </html>
