@@ -1,11 +1,14 @@
 @import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #070504;
 }
 body {
   background-color: #f0be90;
-  color: #070504;
   font-size: 18px;
 }
 /**navigation bar**/
@@ -39,7 +42,7 @@ body {
     font-size: 14px;
     margin: 5px 8px;
     padding-right: 5px;
-    color: #795c34;
+    color: #994F55;
 }
 
 .nav-mid ul li a img {
@@ -295,6 +298,9 @@ button.ghost:hover{
   margin: 10px 0 20px;
   font-weight: 600;
 }
+.profile-info p{
+  color: #070504;
+}
 .seemore{
   display: block;
   text-align: right;
@@ -354,7 +360,6 @@ hr{
   align-self: flex-start;
   border-radius: 15px;
   background: #070504;
-  color: #fbfaf2;
  }
  .spotify-container h2{
   font-size: 22px;
