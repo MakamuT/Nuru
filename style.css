@@ -90,10 +90,10 @@ a {
 }
 .container {
   margin-top: 50px;
-  margin-left: -5px;
+  margin-left: 15rem;
   position: relative;
   width: 768px;
-  max-width: 100%;
+  max-width: 90%;
   min-height: 480px;
   background: #994f55;
   border-radius: 10px;
@@ -183,7 +183,7 @@ button.ghost:hover {
   position: relative;
   height: 100%;
   width: 200%;
-  left: -50%;
+  left: -100%;
   background: linear-gradient(to right, #994f55) no-repeat 0 0 / cover;
   color: #070504;
   transform: translateY(0);
@@ -232,7 +232,28 @@ button.ghost:hover {
     transform: translateY(20%);
   }
 }
+@media (min-width: 680px) {
+  .container {
+    width: 768px;
+    margin: 0;
+  }
+  .sign-in-container, .sign-up-container {
+    width: 50%;
+  }
+  .overlay-container {
+    width: 50%;
+    left: 50%;
+  }
+}
 
+@media (max-width: 767px) {
+  .form-container form {
+    padding: 0 20px;
+  }
+  .button {
+    padding: 12px 30px;
+  }
+}
 /* Profile page**/
 .profile-container {
   display: flex;
@@ -486,7 +507,7 @@ hr {
 }
 .chatbox .incoming img {
   height: 30px;
-  width: 30px;
+  width: 30px; 
   margin-top: 35px;
   border-radius: 50%;
 }
