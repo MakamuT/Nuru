@@ -16,3 +16,5 @@ Fans and art enthusiasts can use Nuru to:
     Follow their favorite artists and stay up-to-date on their latest work.
     Support artists directly through features like donations or commissions.
     Engage with a community of like-minded art lovers.
+ https://makamut.github.io/Nuru/
+ 
