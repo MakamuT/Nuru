@@ -3,66 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages nuru</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="message.css">
 </head>
 <body>
-    <button class="chatbox-toggler">
-        <a href="feed_home.html"><i class="fa fa-times" aria-hidden="true"></i></a>
-    </button>
-    <div class="chatbox">
-        <h2>Messages</h2>
-        <ul class="chats">
-            <li class="chat incoming">
-                <img src="img/user.png">
-                <p>Hello</p>
-            </li>
-        </ul>
-        <div class="chat-input">
-            <textarea placeholder="Enter Message...." required></textarea>
-            <a href="#" class="chatbtn"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+    <div id="messages"></div>
+        <div id="sendMessage">
+            <input type="text" placeholder="say something I'm giving up on you" id="msgTxt">
+            <input type="submit" value="send" id="msgBtn" onclick="module.sendMessage()">
         </div>
-    </div>
-    
-    <script type="text/javascript" src="http://127.0.0.1:5500/socket.io/socket.io.js" defer></script>
     <script>
-        const socket = io();
-        const chatInput = document.querySelector(".chat-input textarea");
-        const sendchatBtn = document.querySelector(".chat-input a");
-        const chatbot = document.querySelector(".chats");
-        let userMessage;
-        const inputInitHeight = chatInput.scrollHeight;
-
-        const createChatLi = (message, className) => {
-            const chatLi = document.createElement("li");
-            chatLi.classList.add("chat", className);
-            let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<img src="img/user.png"><p>${message}</p>`;
-            chatLi.innerHTML = chatContent;
-            return chatLi;
-        };
-
-        const handleChat = () => {
-            userMessage = chatInput.value.trim();
-            if (!userMessage) return;
-            chatInput.value = ""; 
-
-            chatbot.appendChild(createChatLi(userMessage, "outgoing"));
-            chatbot.scroll(0, chatbot.scrollHeight);
-
-            socket.emit('chat message', userMessage);
-        };
-
-        chatInput.addEventListener("input", () => {
-            chatInput.style.height = `${inputInitHeight}px`;
-            chatInput.style.height = `${chatInput.scrollHeight}px`;
-        });
-
-        sendchatBtn.addEventListener('click', handleChat);
-
-        socket.on('chat message', (msg) => {
-            chatbot.appendChild(createChatLi(msg, "incoming"));
-            chatbot.scroll(0, chatbot.scrollHeight);
-        });
+        module = {};
     </script>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+  import {  getDatabase, ref, set, remove, onChildAdded, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBPZKmuLpi2-uYPe2EAvuRc4bjdjaMGxws",
+    authDomain: "test-b2434.firebaseapp.com",
+    databaseURL: "https://test-b2434-default-rtdb.firebaseio.com",
+    projectId: "test-b2434",
+    storageBucket: "test-b2434.appspot.com",
+    messagingSenderId: "874534405127",
+    appId: "1:874534405127:web:5e81d8eaa6b733823856a2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  var msgTxt = document.getElementById('msgTxt');
+  var sender;
+  if (sessionStorage.getItem('sender')){
+    sender = sessionStorage.getItem('sendr');
+  } else{
+    sender = prompt('enter your name');
+    sessionStorage.setItem('sender', sender);
+  }
+  //send message
+  module.sendMessage = function sendMessage() {
+    var msg = msgTxt.value;
+    var timestamp = new Date().getTime();
+    set(ref(db, "messages/"+ timestamp),{
+        msg : msg,
+        sender : sender
+    });
+  }
+  //receive message
+  onChildAdded(ref(db, "messages"), (data)=>{
+    if (data.val().sender == sender){
+        messages.innerHTML += "<div style=justify-content:end class=outer id="+data.key+"><div id=inner class=me>you : "+data.val().msg+"<button id=dltMsg onclick=module.dltMsg("+data.key+")>DELETE</button></div></div>";
+            } else {
+                messages.innerHTML += "<div class=outer id="+data.key+"><div id=inner class=notMe>"+data.val().sender+" : "+data.val().msg+"</div></div>";
+            }
+    
+  })
+  //
+</script>
 </body>
 </html>
