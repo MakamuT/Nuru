@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return sendMessage();">
+    <input type="text" id="message" placeholder="say something I'm giving up on you" autocomplete="off">
+    <input type="submit" value="submit">
+</form>
+<ul id="messages"></ul>
+</body>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js"></script>
+<script type="module">
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBPZKmuLpi2-uYPe2EAvuRc4bjdjaMGxws",
+    authDomain: "test-b2434.firebaseapp.com",
+    projectId: "test-b2434",
+    storageBucket: "test-b2434.appspot.com",
+    messagingSenderId: "874534405127",
+    appId: "1:874534405127:web:5e81d8eaa6b733823856a2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var myName = prompt("Enter your name");
+  
+  function sendMessage(){
+    var message = document.getElementById("message").value;
+    firebase.database().ref("messages").push().set({
+        "sender": myName,
+        "message": message
+    });
+    return false;
+  }
+  
+  firebase.database().ref("messages").on("child_added", function(snapshot){
+    var html = "";
+    html += "<li>";
+    html += snapshot.val().sender + ": " + snapshot.val().message;
+    html += "</li>";
+    document.getElementById("messages").innerHTML += html;
+  });
+</script>
+</html>

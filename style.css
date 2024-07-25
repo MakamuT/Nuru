@@ -58,7 +58,7 @@ body {
   font-size: 20px;
 }
 .nav-mid a:hover {
-  font-size: 10px;
+  border-bottom: 3px solid #dc9858 ;
 }
 
 .nav-propic {
