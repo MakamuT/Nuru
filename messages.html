@@ -1,68 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="message.css">
-</head>
-<body>
-    <div id="messages"></div>
-        <div id="sendMessage">
-            <input type="text" placeholder="say something I'm giving up on you" id="msgTxt">
-            <input type="submit" value="send" id="msgBtn" onclick="module.sendMessage()">
+    <link rel="stylesheet" href="message.css" />
+  </head>
+  <body>
+    <section class="msg-section">
+      <div class="message-container">
+        <aside class="sidebar">
+          <a href="" title="chats" class="sidebar-logo">
+            <i class="fa-solid fa-comments"></i>
+          </a>
+          <ul class="sidebar-menu">
+            <li>
+                <a href=""><i class="fa-brands fa-rocketchat"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-regular fa-address-book"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-solid fa-gear"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-solid fa-folder"></i></a>
+            </li>
+            <li class="sidebar-profile"><button type="button" class="sidebar-profile-toggle">
+                <img src="img/20230221_051213.jpg" alt="">
+            </button>
+            <ul class="sidebar-profile-dd">
+                <li>
+                    <a href=""><i class="fa-regular fa-user"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-solid fa-sign-out"></i></a>
+                </li>
+            </ul>
+        </li>
+          </ul>
+        </aside>
+        <!--Side content-->
+        <div class="msg-content">
+          <div class="content-sidebar">
+            <div class="content-sidebar-title">Chats</div>
+            <form action="" class="content-sidebar-form">
+              <input type="search" class="content-sidebar-input" placeholder="search">
+              <button type="submit" class="content-sidebar-submit">
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </form>
+            <div class="content-messages">
+              <ul class="content-messages-list">
+                <li class="content-messages-title"><span>Recent</span></li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-unread">4</span>
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-unread">4</span>
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-unread">4</span>
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-unread">4</span>
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-unread">4</span>
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li class="content-messages-title"><span>Older</span></li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="img/20230221_051213.jpg" class="content-messages-img">
+                  </a>
+                  <span class="content-messages-info">
+                    <span class="content-username">Thembi</span>
+                    <span class="content-messages-text">I love this song oh my gosh</span>
+                  </span>
+                  <span class="content-messages-more">
+                    <span class="content-messages-time">13:09</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <!--close-->
+        <div id="messages"></div>
+       <!-- <div id="sendMessage">
+          <input
+            type="text"
+            placeholder="say something I'm giving up on you"
+            id="msgTxt"
+          />
+          <input
+            type="submit"
+            value="send"
+            id="msgBtn"
+            onclick="module.sendMessage()"
+          />-->
+        <!--</div>-->
+      </div>
+    </section>
+    <!--Database integration-->
     <script>
-        module = {};
+      module = {};
     </script>
     <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-  import {  getDatabase, ref, set, remove, onChildAdded, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        remove,
+        onChildAdded,
+        onChildRemoved,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBPZKmuLpi2-uYPe2EAvuRc4bjdjaMGxws",
-    authDomain: "test-b2434.firebaseapp.com",
-    databaseURL: "https://test-b2434-default-rtdb.firebaseio.com",
-    projectId: "test-b2434",
-    storageBucket: "test-b2434.appspot.com",
-    messagingSenderId: "874534405127",
-    appId: "1:874534405127:web:5e81d8eaa6b733823856a2"
-  };
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBPZKmuLpi2-uYPe2EAvuRc4bjdjaMGxws",
+        authDomain: "test-b2434.firebaseapp.com",
+        databaseURL: "https://test-b2434-default-rtdb.firebaseio.com",
+        projectId: "test-b2434",
+        storageBucket: "test-b2434.appspot.com",
+        messagingSenderId: "874534405127",
+        appId: "1:874534405127:web:5e81d8eaa6b733823856a2",
+      };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-  var msgTxt = document.getElementById('msgTxt');
-  var sender;
-  if (sessionStorage.getItem('sender')){
-    sender = sessionStorage.getItem('sendr');
-  } else{
-    sender = prompt('enter your name');
-    sessionStorage.setItem('sender', sender);
-  }
-  //send message
-  module.sendMessage = function sendMessage() {
-    var msg = msgTxt.value;
-    var timestamp = new Date().getTime();
-    set(ref(db, "messages/"+ timestamp),{
-        msg : msg,
-        sender : sender
-    });
-  }
-  //receive message
-  onChildAdded(ref(db, "messages"), (data)=>{
-    if (data.val().sender == sender){
-        messages.innerHTML += "<div style=justify-content:end class=outer id="+data.key+"><div id=inner class=me>you : "+data.val().msg+"<button id=dltMsg onclick=module.dltMsg("+data.key+")>DELETE</button></div></div>";
-            } else {
-                messages.innerHTML += "<div class=outer id="+data.key+"><div id=inner class=notMe>"+data.val().sender+" : "+data.val().msg+"</div></div>";
-            }
-    
-  })
-  //
-</script>
-</body>
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      var msgTxt = document.getElementById("msgTxt");
+      var sender;
+      if (sessionStorage.getItem("sender")) {
+        sender = sessionStorage.getItem("sendr");
+      } else {
+      }
+      //send message
+      module.sendMessage = function sendMessage() {
+        const msg = msgTxt.value;
+        if (msg.trim() === "") return;
+        const timestamp = new Date().getTime();
+        set(ref(db, "messages/" + timestamp), {
+          msg: msg,
+          /*sender: sender*/
+        });
+        msgTxt.value = "";
+      };
+    </script>
+  </body>
 </html>
