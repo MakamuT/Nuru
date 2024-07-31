@@ -223,6 +223,8 @@ body{
 /*conversations*/
 .conversation{
     background-color: #d47c6f;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     padding-left: 256px;
 }
@@ -300,54 +302,171 @@ body{
 .conversation-buttons > :hover{
     background-color: #dc9858;
 }
-
-/*#messages{
-    background: #faeec8;
-    border: 2px solid #994f55;
-    border-radius: 25px;
-    height: 60rem;
-    left: 20px;
+.conversation-main{
+    height: 100%;
+    overflow-x: hidden;
     overflow-y: auto;
-    position: fixed;
-    top: 30px;
-    width: 50%;
-    
+    padding: 14px;
+}
+.conversation-wrapper{
+    list-style: none;
+}
+.conversation-item{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 16px;
+}
+.conversation-item.me{
+    flex-direction: row;
+}
+.conversation-item-side{
+    margin-right: 8px;
+}
+.conversation-item-img{
+    border-radius: 20px;
+    height: 34px;
+    object-fit: cover;
+    width: 34px;
+}
+.conversation-item-content{
+    width: 100%;
+}
+.conversation-item-box{
+    position: relative;
+    margin-left: auto;
+    max-width: 540px;
+}
+.conversation-item-text{
+    background-color: #faeec8;
+    box-shadow: 0 2px 8px 2px #faeec8;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 12px 14px;
+}
+.conversation-item-time{
+    color: #dc9858;
+    display: block;
+    font-size: 10px;
+    line-height: 1;
+    margin-top: 4px;
+    text-align: right;
+}
+.conversation-divider{
+    color: #faeec8;
+    font-size: 14px;
+    position: relative;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.conversation-divider::before{
+    border-bottom: 1px solid #994f55;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.conversation-divider span{
+    background-color: #d47c6f;
+    display: inline-block;
+    padding: 0 4px;
+    position: relative;
+    z-index: 1;
+}
+#message{
+    align-items: center;
+    background-color: #f0be90;
+    display: flex;
+    padding: 8px 16px;
 }
 #sendMessage{
-    background: #faeec8;
-    border-radius: 5px;
-    bottom: 0;
-    height: 50px;
-    margin-left: 20px;
-    position: fixed;
-    width: 50%;
+    margin-left: 28px;
+    margin-right: 28px;
+    position: relative;
+    width: 100%;
 }
 #msgTxt{
-    border: 2px solid #994f55;
-    box-sizing: border-box;
-    height: 100%;
-    left: 0;
-    outline: none;
-    padding-left: 10px;
+    background-color: #faeec8;
+    border: 1px solid #994f55;
+    border-radius: 15px;
+    display: block;
+    font-size: 15px;
+    list-style: 1.5;
+    max-height: calc(20px + (14px * 2) * 6);
+    outline: transparent;
+    padding: 10px 12px;
+    width: 100%;
+}
+.vn{
+    background: transparent;
+    border: none;
+    bottom: 8px;
+    color: #994f55;
+    cursor: pointer;
+    font-size: 20px;
+    outline: transparent;
     position: absolute;
-    top: 0;
-    width: calc(100% - 100px);
-    
+    right: 10px;
+}
+.vn:hover{
+    color: red;
 }
 #msgBtn{
-    background: #dc9858;
-    border-radius: 25px;
-    height: 100%;
-    outline: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100px;
-}*/
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    color: #994f55;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    height: 35px;
+    outline: transparent;
+    justify-content: center;
+    width: 35px;
+}
+#msgBtn:hover{
+    background-color: #dc9858;
+}
+#mshBtn:active{
+    background-color: #dc9858;
+    cursor: pointer;
+}
+#msgTxt:focus{
+    border-color: #dc9858;
+}
+
 /*for mobile*/
 @media screen and (max-width:1600px) {
     .message-container{
         height: 100vh;
         max-width: unset;
+    }
+}
+@media  screen and (max-width: 767px) {
+    .sidebar{
+        bottom: 0;
+        height: 64px;
+        top: unset;
+        width: 100%;
+    }
+    .sidebar-logo{
+        display: none;       
+    }
+    .sidebar-menu{
+        flex-direction: row;
+        padding: 0;
+    }
+    .sidebar-menu a{
+        height: 100%;
+        width: 100%;
+    }
+    .sidebar-profile{
+        align-items: center;
+        display: flex;
+        margin-top: 0;
     }
 }

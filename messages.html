@@ -208,37 +208,51 @@
             </div>
             <div class="conversation-main">
               <ul class="conversation-wrapper">
+                <div class="conversation-divider"><span>Today</span></div>
                 <li class="conversation-item me">
                   <div class="conversation-item-side">
                     <img src="img/20230221_051213.jpg" class="conversation-item-img">
                     <div class="conversation-item-content">
                       <div class="conversation-item-box">
-                        <div class="conversation-item-text">I tried calling you yesterday but the was no response is everything alright</div>
+                        <div class="conversation-item-text">I tried calling you yesterday but
+                          the was no response is everything alright
+                          <div class="conversation-item-time">15:50</div>
+                        </div>                     
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="conversation-item you">
+                  <div class="conversation-item-side">
+                    <img src="img/20230221_051213.jpg" class="conversation-item-img">
+                    <div class="conversation-item-content">
+                      <div class="conversation-item-box">
+                        <div class="conversation-item-text">Oh sorry about that I was at the event Evans posted last week
+                          <div class="conversation-item-time">16:05</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </li>
               </ul>
-            </div>
           </div>
-        </div>
-        <!--close-->
-        <div id="messages"></div>
-       <!-- <div id="sendMessage">
+          <div id="message">
+          <div id="sendMessage">
           <input
             type="text"
             placeholder="say something I'm giving up on you"
             id="msgTxt"
           />
-          <input
-            type="submit"
-            value="send"
+          <button type="button" class="vn"><i class="fa-solid fa-microphone"></i></button>
+          </div>
+          <button type="submit"
             id="msgBtn"
-            onclick="module.sendMessage()"
-          />-->
-        <!--</div>-->
-      </div>
+            onclick="module.sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        </div>
     </section>
+    <!---->
+    <script src="message.js"></script>
     <!--Database integration-->
     <script>
       module = {};
@@ -271,23 +285,56 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const db = getDatabase(app);
-      var msgTxt = document.getElementById("msgTxt");
-      var sender;
-      if (sessionStorage.getItem("sender")) {
-        sender = sessionStorage.getItem("sendr");
-      } else {
+      const msgTxt = document.getElementById("msgTxt");
+
+    const userId = sessionStorage.getItem("userId") || `user_${Math.random().toString(36).substr(2, 9)}`;
+    sessionStorage.setItem("userId", userId);
+
+    module.sendMessage = function sendMessage() {
+      const msg = msgTxt.value;
+      if (msg.trim() === "") return;
+      const timestamp = new Date().getTime();
+
+      set(ref(db, "messages/" + timestamp), {
+        msg: msg,
+        sender: userId,
+      });
+      msgTxt.value = "";
+    };
+
+    const createConversation = (message, className) => {
+      const chat = document.createElement("li");
+      chat.classList.add("conversation-item", className);
+      chat.innerHTML = `
+        <div class="conversation-item-side">
+          <img src="img/20230221_051213.jpg" class="conversation-item-img">
+          <div class="conversation-item-content">
+            <div class="conversation-item-box">
+              <div class="conversation-item-text">${message}
+                <div class="conversation-item-time">${new Date().toLocaleTimeString()}</div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      document.querySelector(".conversation-wrapper").appendChild(chat);
+    };
+
+    onChildAdded(ref(db, 'messages'), (data) => {
+      const message = data.val().msg;
+      const sender = data.val().sender;
+      const className = sender === userId ? "me" : "you";
+      createConversation(message, className);
+    });
+
+    msgTxt.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        module.sendMessage();
       }
-      //send message
-      module.sendMessage = function sendMessage() {
-        const msg = msgTxt.value;
-        if (msg.trim() === "") return;
-        const timestamp = new Date().getTime();
-        set(ref(db, "messages/" + timestamp), {
-          msg: msg,
-          /*sender: sender*/
-        });
-        msgTxt.value = "";
-      };
+    });
+  </script>
+</body>
+</html>
+      
     </script>
   </body>
 </html>
