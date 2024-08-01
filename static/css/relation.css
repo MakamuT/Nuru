@@ -1,0 +1,171 @@
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'fantasy', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0be90;
+    color: #402700;
+}
+
+a {
+    text-decoration: none;
+    color: #402700;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fbfaf2;
+    backdrop-filter: blur(45px);
+    padding: 6px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 15px;
+    border-radius: 30%;
+    display: block;
+}
+
+.nav-mid ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+.nav-mid ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 8px;
+    padding-right: 5px;
+    color: #795c34;
+}
+
+.nav-mid ul li a img {
+    width: 15px;
+}
+
+.nav-propic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+/*---------navbar end */
+
+.container {
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*--------left section */
+.left-sec {
+    flex-basis: 25%;
+    align-self: flex-start;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.left-sec h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.suggestion img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.suggestion div {
+    flex: 1;
+}
+
+.suggestion h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.suggestion p {
+    font-size: 14px;
+    color: #777;
+}
+
+.suggestion button {
+    background-color: #994F55;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*--------main section */
+.main-sec {
+    flex-basis: 70%;
+    align-self: flex-start;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.main-sec h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.connection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.connection img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.connection div {
+    flex: 1;
+}
+
+.connection h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.connection p {
+    font-size: 14px;
+    color: #777;
+}
+
+.connection button {
+    background-color: #994F55;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuru design</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/NuruFeed.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left"> 
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='images/Nuru.png') }}" alt="logo for website">
+            </a>
+        </div> 
+        <div class="nav-mid">
+            <ul>
+                <li><a href="#"><img src="{{ url_for('static',filename ='images/house.png') }}" alt=""><span>Home</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='images/handshake.png') }}" alt="Relationships"><span>Relationships</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='images/social-communication-disorder.png') }}" alt="Messages"><span>Messages</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='images/bell.png') }}" alt="Notifications"><span>Notifications</span></a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <img src="{{ url_for('static', filename='images/user.png') }}" class="nav-propic" onclick="toggleMenu()">
+        </div>
+        <div class="menu-wrap" id="proMenu">
+            <div class="profile-menu">
+                <div class="info">
+                    <img src="{{ url_for('static', filename='images/pexels-photo-1820919.webp') }}" alt="">
+                    <div>
+                        <h3>Thembi Makamu</h3>
+                        <a href="#">See Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/comment.png') }}" alt="feedback">
+                    <p>Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/cogwheel.png') }}" alt="settings & privacy">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/monitor.png') }}" alt="Display & accessibility">
+                    <p>Display & Accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/help.png') }}" alt="Help & Support">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/logout.png') }}" alt="Logout">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+        
+    </nav>
+    <!--end of navbar-->
+    <div class="container">
+        <!-- left section-->
+        <div class="left-sec">
+            <div class="sidebar-box">
+                <img src="{{ url_for('static', filename='images/pexels-photo-4177725.jpeg') }}" width="100%">
+                <div class="sidebar-info">
+                    <img src="{{ url_for('static', filename='images/pexels-photo-1820919.webp') }}">
+                    <h1>Thembi Makamu</h1>
+                    <h3>Writer and web designer</h3>
+                    <ul>
+                        <li>Relationships <span>25</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- main section -->
+        <div class="main-sec">
+            <form action="{{ url_for('index') }}" method="post">
+                <div class="create">
+                    <div class="create-input">
+                        <img src="{{ url_for('static', filename='images/pexels-photo-4177725.jpeg') }}">
+                        <textarea name="content" rows="2" placeholder="Write something"></textarea>
+                    </div>
+                    <div class="create-link">
+                        <li><img src="{{ url_for('static', filename='images/gallery.png') }}" alt="post media">Media</li>
+                        <li><img src="{{ url_for('static', filename='images/pen-filled-writing-tool.png') }}" alt="post blog">Blog post</li>
+                        <li><img src="{{ url_for('static', filename='images/icons8-calendar-50.png') }}" alt="schedule event">Event</li>
+                        <li><button type="submit">Post</button></li>
+                    </div>
+                </div>
+            </form>
+            <div class="sorted">
+                <hr>
+                <p>Sort by: <span>Top <img src="{{ url_for('static', filename='images/down.png') }}" alt=""></span></p>
+            </div>
+
+{% for post in posts %}
+<div class="post">
+    <div class="author">
+        <img src="{{ post.image_url }}" alt="">
+        <div class="template_text">
+            <h1>{{ post.author }}</h1>
+            <p>{{ post.role }}</p>
+            <p>{{ post.timestamp | datetimeformat }}</p>
+        </div>
+    </div>
+    <p class="content">
+        {{ post.content }}
+    </p>
+    <div class="post-stats">
+        <div>
+            <img src="{{ url_for('static', filename='images/like.png') }}" alt="">
+            <!-- <img src="{{ url_for('static', filename='images/love.png') }}" alt="">
+            <img src="{{ url_for('static', filename='images/snap.png') }}" alt=""> -->
+            <span class="reactions">{{ post.likes }} likes</span>
+        </div>
+        <div>
+            <span>{{ post.comments }} comments &middot; {{ post.shares }} shares</span>
+        </div>
+    </div>
+    <div class="activity">
+        <!-- <div>
+            <img src="{{ url_for('static', filename='images/user.png') }}" alt="" class="acivity-icon-user">
+            <img src="{{ url_for('static', filename='images/down.png') }}" alt="" class="acivity-icon-arrow">
+        </div> -->
+        
+        <div class="activity-link" onclick="toggleLike(this)">
+            <img src="{{ url_for('static', filename='images/like.png') }}" alt="">
+            <span>Like</span>
+        </div>
+
+        <div class="activity-link">
+            <img src="{{ url_for('static', filename='images/comment.png') }}" alt="">
+            <span>Comment</span>
+        </div>
+        <div class="activity-link">
+            <img src="{{ url_for('static', filename='images/share.png') }}" alt="">
+            <span>Share</span>
+        </div>
+        
+        <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}">
+            <button type="submit">Delete post</button>
+        </form>
+    </div>
+</div>
+{% endfor %}
+
+        </div>
+        <!-- right section -->
+        <div class="right-sec"> 
+            <div class="news">
+                <img src="{{ url_for('static', filename='images/information-button.png') }}" class="info-icon" alt="">
+                <h3>Gigs
+                </h3>
+
+                <div class="news-post">
+                    <a href="#">Need family potrait painted</a>
+                    <small>Muckleneuk, PTA</small>
+                    <span>3 days ago &middot; 10 readers</span>
+                </div>
+                
+                <div class="news-post">
+                    <a href="#">Looking for singers to perform</a>
+                    <small>Market theatre, JHB</small>
+                    <span>1 day ago &middot; 34 readers</span>
+                </div>
+
+                <div class="news-post">
+                    <a href="#">Poetry slam competition</a>
+                    <small>Bravos Pizzeria</small>
+                    <span>2 weeks ago &middot; 56 readers</span>
+                </div>
+
+                <a href="#" class="more-link">Read more</a>
+            </div>
+            <div class="instagram">
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-65ff03cb-1cce-409f-93ec-8e290edada44" data-elfsight-app-lazy></div>
+            </div>
+            <div class="twitter">
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-3fdef87c-bb9f-4832-b0d3-12b090fb7fe2" data-elfsight-app-lazy></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleLike(element) {
+            element.classList.toggle("liked");
+        }
+    </script>
+    <script>
+        // Function to convert timestamp to readable datetime
+        function timestampToDatetime(timestamp) {
+            var date = new Date(timestamp * 1000);
+            return date.toLocaleString();
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".post small").forEach(function(element) {
+                var timestamp = parseFloat(element.innerText);
+                element.innerText = timestampToDatetime(timestamp);
+            });
+        });
+        </script>
+        <script>
+            // Toggle menu function
+            function toggleMenu() {
+                var proMenu = document.getElementById("proMenu");
+                if (proMenu) {
+                    proMenu.classList.toggle("open-menu");
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".nav-propic").addEventListener("click", toggleMenu);
+            });
+        </script>
+        
+</body>
+</html>

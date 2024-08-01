@@ -1,0 +1,26 @@
+</div>{% for post in posts %}
+<div class="post">
+  <p>{{ post.author }}</p>
+  <p>{{ post.role }}</p>
+  <p>{{ post.timestamp|datetimeformat }}</p>
+  <p>{{ post.content }}</p>
+  {% if post.image_url %}
+    <img src="{{ post.image_url }}" alt="Post image">
+  {% endif %}
+</div>
+{% endfor %}
+
+
+{% for post in posts %}
+<div class="post">
+    <div class="author">
+        <img src="{{ post.image_url }}" alt="">
+        <div>
+            <h1>{{ post.author }}</h1>
+            <small>{{ post.role }}</small>
+            <small>{{ post.timestamp | datetimeformat }}</small>
+        </div>
+    </div>
+    <p>{{ post.content }}</p>
+</div>
+{% endfor %}

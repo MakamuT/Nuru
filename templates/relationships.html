@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections - Nuru</title>
+    <link rel="stylesheet" type="text/css" href="relation.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left"> 
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='images/Nuru.png') }}" alt="logo for website">
+            </a>
+        </div> 
+        <div class="nav-mid">  
+            <ul>
+                <li><a href="#"><img src="{{ url_for('static',filename ='images/house.png') }}" alt=""><span>Home</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='images/handshake.png') }}" alt="Relationships"><span>Connections</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='images/social-communication-disorder.png') }}" alt="Messages"><span>Messages</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='images/bell.png') }}" alt="Notifications"><span>Notifications</span></a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <img src="{{ url_for('static', filename='images/user.png') }}" class="nav-propic" onclick="toggleMenu()">
+        </div>
+        <!-- ---------------drop-down-menu-------------- -->
+        <div class="menu-wrap" id="proMenu">
+            <div class="profile-menu">
+                <div class="info">
+                    <img src="{{ url_for('static', filename='images/pexels-photo-1820919.webp') }}" alt="">
+                    <div>
+                        <h3>Thembi Makamu</h3>
+                        <a href="#">See Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/comment.png') }}" alt="feedback">
+                    <p>Feedback</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/cogwheel.png') }}" alt="settings & privacy">
+                    <p>Settings & Privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/monitor.png') }}" alt="Display & accessibility">
+                    <p>Display & Accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/help.png') }}" alt="Help & Support">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <img src="{{ url_for('static', filename='images/logout.png') }}" alt="Logout">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!--end of navbar-->
+
+    <div class="container">
+        <div class="left-sec">
+            <h2>People You May Know</h2>
+            <div class="suggestion">
+                <img src="{{ url_for('static', filename='images/suggestion1.jpg') }}" alt="suggestion image">
+                <div>
+                    <h3>John Doe</h3>
+                    <p>Software Engineer at ABC Corp</p>
+                    <button>Connect</button>
+                </div>
+            </div>
+            <div class="suggestion">
+                <img src="{{ url_for('static', filename='images/suggestion2.jpg') }}" alt="suggestion image">
+                <div>
+                    <h3>Jane Smith</h3>
+                    <p>Product Manager at XYZ Inc</p>
+                    <button>Connect</button>
+                </div>
+            </div>
+            <!-- Add more suggestions as needed -->
+        </div>
+
+        <div class="main-sec">
+            <h2>Your Connections</h2>
+            <div class="connection">
+                <img src="{{ url_for('static', filename='images/connection1.jpg') }}" alt="connection image">
+                <div>
+                    <h3>Alice Johnson</h3>
+                    <p>Graphic Designer at Design Studio</p>
+                </div>
+                <button>Message</button>
+            </div>
+            <div class="connection">
+                <img src="{{ url_for('static', filename='images/connection2.jpg') }}" alt="connection image">
+                <div>
+                    <h3>Bob Brown</h3>
+                    <p>Marketing Specialist at Marketing Co</p>
+                </div>
+                <button>Message</button>
+            </div>
+            <!-- Add more connections as needed -->
+        </div>
+    </div>
+
+    <script>
+        // Toggle menu function
+        function toggleMenu() {
+            var proMenu = document.getElementById("proMenu");
+            proMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>

@@ -1,27 +1,66 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuru design</title>
-    <link rel="stylesheet" href="NuruFeed.css">
- </head>
- <body>
-     <nav class="navbar">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/static/NuruFeed.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/my_image.jpg') }}" alt="My Image">
+    <nav class="navbar">
         <div class="nav-left"> 
-            <a href="index.html" class="logo"><img src="img/Nuru.png" alt="logo for website"></a>
+            <a href="index.html" class="logo"><images src="{{ url_for('static', filename='/static/images/Nuru.png') }}" alt="logo for website"></a>
         </div> 
-        <div class="nav-mid">
+        <div class="nav-mid">  
             <ul>
-                <li><a href="#"><img src="img/house.png" alt=""><span>Home</span></a></li>
-                <li><a href="#"><img src="img/handshake.png" alt=""><span>Relationships</span></a></li>
-                <li><a href="#"><img src="img/social-communication-disorder.png" alt=""><span>Messages</span></a></li>
-                <li><a href="#"><img src="img/bell.png" alt=""><span>Notifications</span></a></li>
-                <!-- <li><a href="feed_home.html"><img src="img/home.png" alt=""><span>Home</span></a></li> -->
+                <li><a href="#"><images src="{{ url_for('static',filename ='/images/house.png') }}" alt=""><span>Home</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='/images/handshake.png') }}" alt="My Image"><span>Relationships</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='/images/social-communication-disorder.png') }}" alt="My Image"><span>Messages</span></a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='/images/bell.png') }}" alt="My Image"><span>Notifications</span></a></li>
+                <!-- <li><a href="feed_home.html"><images src="static/images/home.png" alt=""><span>Home</span></a></li> -->
             </ul>
         </div>
         <div class="nav-right">
-            <img src="img/user.png" class="nav-propic">
+            <images src="static/images/user.png" class="nav-propic" onclick="toggleMenu()">
+        </div>
+        <!-- ---------------drop-down-menu-------------- -->
+        <div class="menu-wrap" id="proMenu">
+            <div class="profile-menu">
+                <div class="info">
+                    <images src="static/images/pexels-photo-1820919.webp" alt="">
+                    <div>
+                        <h3>Thembi Makamu</h3>
+                        <a href="#">See Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="menu-link">
+                    <images src="static/images/comment.png" alt="">
+                    <p>feedback</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <images src="static/images/cogwheel.png" alt="">
+                    <p>settings & privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <images src="static/images/monitor.png" alt="">
+                    <p>Display & accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <images src="images" alt="">
+                    <p>Help & Support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="menu-link">
+                    <images src="" alt="">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
         </div>
 </nav>
 <!--end of navbar-->
@@ -29,9 +68,9 @@
         <!-- left section-->
     <div class="left-sec">
         <div class="sidebar-box">
-                <img src="img/pexels-photo-4177725.jpeg" width="100%">
+                <images src="static/images/pexels-photo-4177725.jpeg" width="100%">
                 <div class="sidebar-info">
-                    <img src="img/pexels-photo-1820919.webp">
+                    <images src="static/images/pexels-photo-1820919.webp">
                     <h1>Thembi Makamu</h1>
                     <h3>Writer and web designer</h3>
                     <ul>
@@ -43,118 +82,46 @@
         <!-- <div class="activity"></div> -->
             </div>
 </div>
-                
-<!------main section-->
-<div class="main-sec">
-    <div class="create">
-        <div class="create-input">
-            <img src="img/pexels-photo-4177725.jpeg">
-            <textarea rows="2" placeholder="write something"></textarea>
-        </div>
-        <div class="create-link">
-            <li><img src="img/gallery.png" alt="post media">Media</li>
-            <li><img src="img/pen-filled-writing-tool.png" alt="post blog">Blog post</li>
-            <li><img src="img/icons8-calendar-50.png" alt="schedule event">event</li>
-            <li>Post</li>
-        </div>
-    </div>
-    <div class="sorted">
-        <hr>
-        <p>Sort by: <span>top <img src="img/down.png" alt=""></span></p>
-    </div>
-    <div class="post">
-        <div class="author">
-            <img src="https://images.nappy.co/uploads/large/19515968410409yuyvpjffyjg3vqe62wkoqgkgw5fuz7mff5ejafxaom11u1kb7md85wiqxqybnjn2p6zql8dcztjnq1bm7xriij6kdpxegbvgo0b.jpg?auto=format&w=960&q=75" alt="">
-            <div>
-                <h1>Yasin Bey</h1>
-                <small>Rapper, Poet, actor</small>
-                <small>2 hours ago</small>
-            </div>
-        </div>
-        <p>
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi est reiciendis quis ducimus ipsa ea. Quisquam nesciunt praesentium pariatur dicta, quo velit rerum unde recusandae, necessitatibus officiis ut impedit blanditiis obcaecati tempore! Qui, quam deleniti eos fugiat sunt quis quo officia quisquam dolore doloribus perspiciatis provident obcaecati sed minima corporis?
-        </p>
-        <img src="https://images.nappy.co/uploads/large/dsc09404-247141677557738f3flu6lrcpomxirtosyxmyczbl7djq3mk4g49lszsxkbwsbbrztlj0wbwqu8kluttarm4xwhr8uv3p8l9egqbho7cpzlynbysihq.jpg?auto=format&w=961&q=75" width="100%" >
 
-        <div class="post-stats">
-            <div>
-                <img src="img/like.png" alt="">
-                <img src="img/love.png" alt="">
-                <img src="img/snap.png" alt="">
-                <span class="reactions"> Mzwakhe Mbuli, Leleti kumalo and 67 others</span>
+<!------main section--><div class="main-sec">
+            <form action="{{ url_for('create_post') }}" method="post">
+                <div class="create">
+                    <div class="create-input">
+                        <img src="img/pexels-photo-4177725.jpeg">
+                        <textarea name="content" rows="2" placeholder="Write something"></textarea>
+                    </div>
+                    <div class="create-link">
+                        <li><img src="img/gallery.png" alt="post media">Media</li>
+                        <li><img src="img/pen-filled-writing-tool.png" alt="post blog">Blog post</li>
+                        <li><img src="img/icons8-calendar-50.png" alt="schedule event">Event</li>
+                        <li><button type="submit">Post</button></li>
+                    </div>
+                </div>
+            </form>
+            <div class="sorted">
+                <hr>
+                <p>Sort by: <span>Top <img src="img/down.png" alt=""></span></p>
             </div>
-            <div>
-                <span>31 comments &middot; 2 shares</span>
+            {% for post in posts %}
+            <div class="post">
+                <div class="author">
+                    <img src="{{ post.image_url }}" alt="">
+                    <div>
+                        <h1>{{ post.author }}</h1>
+                        <small>{{ post.role }}</small>
+                        <small>{{ post.timestamp | datetimeformat }}</small>
+                    </div>
+                </div>
+                <p>{{ post.content }}</p>
+                <!-- Additional post content here -->
             </div>
+            {% endfor %}
         </div>
-        <div class="activity">
-            <div>
-                <img src="img/user.png" alt="" class="acivity-icon-user">
-                <img src="img/down.png" alt="" class="acivity-icon-arrow">
-            </div>
-            <div class="activity-link">
-                <img src="img/like.png" alt="" >
-                <span>Like</span>
-            </div>
-            <div class="activity-link">
-                <img src="img/comment.png" alt="">
-                <span>comment</span>
-            </div>
-            <div class="activity-link">
-                <img src="img/share.png" alt="">
-                <span>share</span>
-            </div>
-        </div>
-    </div>
-    <div class="post">
-        <div class="author">
-            <img src="https://images.nappy.co/uploads/large/19515968410409yuyvpjffyjg3vqe62wkoqgkgw5fuz7mff5ejafxaom11u1kb7md85wiqxqybnjn2p6zql8dcztjnq1bm7xriij6kdpxegbvgo0b.jpg?auto=format&w=960&q=75" alt="">
-            <div>
-                <h1>Yasin Bey</h1>
-                <small>Rapper, Poet, actor</small>
-                <small>2 hours ago</small>
-            </div>
-        </div>
-        <p>
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi est reiciendis quis ducimus ipsa ea. Quisquam nesciunt praesentium pariatur dicta, quo velit rerum unde recusandae, necessitatibus officiis ut impedit blanditiis obcaecati tempore! Qui, quam deleniti eos fugiat sunt quis quo officia quisquam dolore doloribus perspiciatis provident obcaecati sed minima corporis?
-        </p>
-        <img src="https://images.nappy.co/uploads/large/dsc00410-247141677559748yrgqcnaofpxbvedsdhborzdgk6d7iq6pk7buqopgqzecdckfuaclqx40kwvzkehssqneshvqlwucejrcyjhopdpy98i3bg2kmm9q.jpg?auto=format&w=1280&q=75" width="100%" >
-
-        <div class="post-stats">
-            <div>
-                <img src="img/like.png" alt="">
-                <img src="img/love.png" alt="">
-                <img src="img/snap.png" alt="">
-                <span class="reactions"> Mzwakhe Mbuli, Leleti kumalo and 67 others</span>
-            </div>
-            <div>
-                <span>31 comments &middot; 2 shares</span>
-            </div>
-        </div>
-        <div class="activity">
-            <div>
-                <img src="img/user.png" alt="" class="acivity-icon-user">
-                <img src="img/down.png" alt="" class="acivity-icon-arrow">
-            </div>
-            <div class="activity-link">
-                <img src="img/like.png" alt="" >
-                <span>Like</span>
-            </div>
-            <div class="activity-link">
-                <img src="img/comment.png" alt="">
-                <span>comment</span>
-            </div>
-            <div class="activity-link">
-                <img src="img/share.png" alt="">
-                <span>share</span>
-            </div>
-        </div>
-    </div>
-</div>
 <!---right section-->
-<div class="right-sec">
+
+<div class="right-sec"> 
             <div class="news">
-                <img src="img/information-button.png" class="info-icon" alt="">
+                <images src="static/images/information-button.png" class="info-icon" alt="">
                 <h3>Trending news</h3>
                 <a href="#">Looking for poets to perform</a>
                 <span>1 day ago &middot; 10 readers</span>
@@ -169,14 +136,37 @@
             </div>
             <div class="instagram">
                 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-65ff03cb-1cce-409f-93ec-8e290edada44" data-elfsight-app-lazy></div>
+                <div class="elfsight-app-65ff03cb-1cce-409f-93ec-8e290edada44" data-elfsight-app-lazy></div>
             </div>
             <div class ="twitter">
                 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-3fdef87c-bb9f-4832-b0d3-12b090fb7fe2" data-elfsight-app-lazy></div>
+                <div class="elfsight-app-3fdef87c-bb9f-4832-b0d3-12b090fb7fe2" data-elfsight-app-lazy></div>
             </div>
             
 </div>
 </div>
- </body>
- </html> 
+<script>
+    // Function to convert timestamp to readable datetime
+    function timestampToDatetime(timestamp) {
+        var date = new Date(timestamp * 1000);
+        return date.toLocaleString();
+    }
+
+    // Update post timestamps on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".post small").forEach(function(element) {
+            var timestamp = parseFloat(element.innerText);
+            element.innerText = timestampToDatetime(timestamp);
+        });
+    });
+</script>
+<!-- <script>
+    let proMenu = document.getElementById("proMenu");
+
+    function toggleMenu(){
+        proMenu.classlist.toggle("open-menu");
+
+    }
+</script> -->
+</body>
+</html> 
