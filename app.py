@@ -26,6 +26,46 @@ def ensure_utc(dt):
         dt = dt.replace(tzinfo=timezone.utc)
     return dt.astimezone(timezone.utc)
 
+posts = [
+    {
+        'author': 'Alex Johnson',
+        'role': 'Painter',
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'content': 'Just finished a new landscape painting. Feeling inspired!',
+        'image_url': 'https://example.com/artist1.jpg'
+    },
+    {
+        'author': 'Maria Garcia',
+        'role': 'Sculptor',
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'content': 'Completed a new marble sculpture. Excited for the exhibition!',
+        'image_url': 'https://example.com/artist2.jpg'
+    },
+    {
+        'author': 'Chris Lee',
+        'role': 'Photographer',
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'content': 'Captured some amazing shots at the cityscape. Check out my gallery!',
+        'image_url': 'https://example.com/artist3.jpg'
+    },
+    {
+        'author': 'Jamie Brown',
+        'role': 'Digital Artist',
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'content': 'Just launched a new digital art series. Would love your feedback!',
+        'image_url': 'https://example.com/artist4.jpg'
+    },
+    {
+        'author': 'Taylor Green',
+        'role': 'Graphic Designer',
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'content': 'Redesigned a logo for a local business. Check out the final design!',
+        'image_url': 'https://example.com/artist5.jpg'
+    }
+]
+
+for post in posts:
+    db.child("posts").push(post)
 def datetimeformat(value):
 
     dt = ensure_utc(value)
