@@ -16,3 +16,8 @@ Fans and art enthusiasts can use Nuru to:
     Follow their favorite artists and stay up-to-date on their latest work.
     Support artists directly through features like donations or commissions.
     Engage with a community of like-minded art lovers.
+
+This site was coded and created by Thabiso Ngwenya and Thembisile Makamu
+ https://makamut.github.io/Nuru/
+ https://medium.com/@makamuthe2/introductions-d3be1338595f
+ 
